@@ -82,6 +82,6 @@ class ClientWorkoutsController < ApplicationController
   end
   
   def find
-    
+    @client_workouts = ClientWorkout.find(:all, :conditions=>["client_name = ? OR trainer = ?", params[:search_string], params[:search_string]])
   end
 end
